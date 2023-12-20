@@ -2,7 +2,15 @@ require_relative '../lib/playground'
 
 describe Playground do
     context 'when there are no children' do
-        it 'is a quite boring place'
-        it 'is empty'
+        let(:playground) { Playground.new(0) }
+
+        it 'is a quite boring place' do
+            mood = playground.mood
+            expect(mood).to eq('boring')
+        end
+
+        it 'is empty' do
+            expect(playground).to be_empty
+        end
     end
 end
